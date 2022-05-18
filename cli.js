@@ -41,7 +41,7 @@ const fixedfiles = []
 
 const gitcommands = ['#!/bin/bash']
 
-const reg = new RegExp(/(import\s+|from\s+|require\()['"](.*)['"]/)
+const reg = new RegExp(/(import\s+|from\s+|require\()['"]((?!lodash).*)['"]/)
 
 const [, , ...args] = process.argv
 const target = args[0] || 'src'
