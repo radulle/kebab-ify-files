@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const recursive = require('recursive-readdir')
-const chalk = require('chalk')
 const gitStatus = require('git-status')
 const fs = require('fs')
 const { execFileSync } = require('child_process')
@@ -48,7 +47,7 @@ const [, , ...args] = process.argv
 const target = args[0] || 'src'
 if (!fs.existsSync(target)) {
   console.error(
-    `Directory ${chalk.bgRed.yellow.underline(target)} does not exist`
+    `Directory ${target} does not exist`
   )
   process.exit(1)
 }
@@ -202,7 +201,7 @@ ${
 }
       `
       fs.writeFileSync(reportfile, contents)
-      console.log(chalk.bgGreen.black('  Done  '))
+      console.log('  Done  ')
     })
   })
 }
